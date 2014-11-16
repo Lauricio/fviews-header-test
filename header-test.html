@@ -10,8 +10,9 @@
 
   {{#HeaderFooterLayout}}
 
-    {{> yield region ='header' }}
-
+    {{#Surface target="header" size="[undefined, true]"}}
+      {{> yield region ='header' }}
+    {{/Surface}}
 
     {{#RenderController target="content" size="[undefined,undefined]"}}
       {{>yield}}
@@ -39,18 +40,14 @@
 
 
 <template name="route1header">
-{{#Surface target="header" size="[undefined, true]"}}
   <div class="header-big">
     <h4>Route 1 Header: height 100px <a href="{{pathFor route='route2'}}"><button>GoTo Route 2</button></a></h4>
   </div>
-{{/Surface}}
 </template>
 
 <template name="route2header">
-{{#Surface target="header" size="[undefined, true]"}}
 <div class="header-small">
-  <h4>Route 2 Header: height 50px <a href="{{pathFor route='route1'}}"><button>GoTo Route 1</button></a> Reload page to fix header height</h4>
+  <h4>Route 2 Header: height 150px <a href="{{pathFor route='route1'}}"><button>GoTo Route 1</button></a> Reload page to fix header height</h4>
 </div>
-{{/Surface}}
 </template>
 
