@@ -11,7 +11,7 @@
   {{#HeaderFooterLayout}}
 
     {{#Surface target="header" size="[undefined, true]"}}
-      {{> yield region ='header' }}
+      {{> Template.dynamic template=activeHeader}}
     {{/Surface}}
 
     {{#RenderController target="content" size="[undefined,undefined]"}}
