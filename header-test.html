@@ -8,34 +8,26 @@
 
 <template name="layout">
 
-  {{#HeaderFooterLayout footerSize="0"}}
-
-    {{#Surface target="header" size="[undefined, true]" }}
-      {{> yield 'header'}}
-    {{/Surface}}
-
-    {{#RenderController target="content"}}
-      {{> yield}}
-    {{/RenderController}}
-
-  {{/HeaderFooterLayout}}
+  {{#Modifier}}
+    {{#SequentialLayout}}
+      {{#Surface size="[undefined,true]"}} {{>yield "header"}} {{/Surface}}
+      {{#Surface size="[undefined,true]"}} {{>yield}} {{/Surface}}
+    {{/SequentialLayout}}
+  {{/Modifier}}
 
 </template>
 
 <template name="route1">
   {{> contentFor region="header" template="route1header"}}
 
-  {{#Surface size="[undefined, true]"}}
     <div class="content"> <h3>Route 1 Content</h3> </div>
-  {{/Surface}}
+
 </template>
 
 <template name="route2">
   {{> contentFor region="header" template="route2header"}}
 
-  {{#Surface size="[undefined, true]"}}
     <div class="content"> <h3>Route 2 Content</h3> </div>
-  {{/Surface}}
 </template>
 
 
