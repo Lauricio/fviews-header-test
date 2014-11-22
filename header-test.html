@@ -11,11 +11,11 @@
   {{#HeaderFooterLayout footerSize="0"}}
 
     {{#Surface target="header" size="[undefined, true]" }}
-      {{> yield region ='header' }}
+      {{> yield 'header'}}
     {{/Surface}}
 
     {{#RenderController target="content"}}
-      {{>yield}}
+      {{> yield}}
     {{/RenderController}}
 
   {{/HeaderFooterLayout}}
