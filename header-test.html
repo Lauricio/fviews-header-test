@@ -7,18 +7,17 @@
 </body>
 
 <template name="layout">
-
-  {{#HeaderFooterLayout footerSize="0"}}
-
-    {{#Surface target="header" size="[undefined, true]" }}
-      {{> yield region ='header' }}
-    {{/Surface}}
-
-    {{#RenderController target="content"}}
-      {{>yield}}
-    {{/RenderController}}
-
-  {{/HeaderFooterLayout}}
+  {{#Modifier}}
+    {{#Surface style="background: red"}}{{/Surface}}
+    {{#SequentialLayout}}
+      {{#Surface size="[undefined,true]"}}
+        {{> yield "header"}}
+      {{/#Surface}}
+      {{#Surface size="[undefined,true]"}}
+        {{> yield}}
+      {{/#Surface}}
+    {{/SequentialLayout}}
+  {{/Modifier}}
 
 </template>
 
